@@ -6,10 +6,9 @@ import erc20 from 'config/abi/mutantnft.json'
 
 export const getContract = (provider: ProviderType, address: string) => {
   const web3 = new Web3(provider)
-  const contract = new web3.eth.Contract((erc20 as unknown) as AbiItem, address)
+  const contract = new web3.eth.Contract(erc20 as unknown as AbiItem, address)
   return contract
 }
-
 
 export const getNftTokenBalance = async (
   provider: ProviderType,

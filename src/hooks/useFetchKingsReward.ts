@@ -7,7 +7,6 @@ import { farmsConfig } from 'config/constants'
 import getReward from 'utils/getReward'
 import useRefresh from './useRefresh'
 
-
 const useFetchKingsReward = () => {
   const [balances, setBalance] = useState('0')
   const { account }: { account: string } = useWallet()
@@ -15,10 +14,8 @@ const useFetchKingsReward = () => {
 
   useEffect(() => {
     const fetchKingsRewardBalance = async () => {
-      
+      const returnData = await getReward(account)
 
-      const returnData  = await getReward(account)
-      
       setBalance(returnData)
     }
 

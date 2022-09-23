@@ -90,12 +90,12 @@ const FarmedStakingCard = () => {
         <Row>
           <Block>
             <Label>{TranslateString(544, 'Crowns to Harvest')}</Label>
-            <CakeHarvestBalance earningsSum={earningsSum}/>
+            <CakeHarvestBalance earningsSum={earningsSum} />
             <Label>~${(eggPrice * earningsSum).toFixed(2)}</Label>
           </Block>
           <Block>
             <Label>{TranslateString(545, 'Kings to Harvest')}</Label>
-            <CakeHarvestBalance earningsSum={kingsRewardNum}/>
+            <CakeHarvestBalance earningsSum={kingsRewardNum} />
             <Label>~${(eggPrice * kingsRewardNum).toFixed(2)}</Label>
           </Block>
         </Row>

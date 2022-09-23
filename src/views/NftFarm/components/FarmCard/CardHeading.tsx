@@ -36,10 +36,8 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
       <Flex flexDirection="column" alignItems="flex-end">
         <Heading mb="4px">Mutant Kings NFT</Heading>
         <Flex justifyContent="center">
-        <NoStakingTag />
+          <NoStakingTag />
 
-   
-       
           {/* {isCommunityFarm ? <CommunityTag /> : <CoreTag />} */}
           {/* <RiskTag risk={risk} /> */}
           {/* <MultiplierTag variant="secondary">{multiplier}</MultiplierTag> */}

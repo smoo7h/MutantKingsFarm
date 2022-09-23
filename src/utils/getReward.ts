@@ -14,12 +14,9 @@ interface Call {
 
 const getReward = async (account: string) => {
   const web3 = getWeb3()
-  const yieldhub = new web3.eth.Contract((YieldHubAbi as unknown) as AbiItem, getYieldHubAddress())
-
-  
+  const yieldhub = new web3.eth.Contract(YieldHubAbi as unknown as AbiItem, getYieldHubAddress())
 
   const balance: string = await yieldhub.methods.getTotalClaimable(account, getKingsAddress()).call()
-    
 
   return balance
 }

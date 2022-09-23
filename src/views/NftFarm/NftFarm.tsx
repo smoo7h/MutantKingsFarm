@@ -17,8 +17,6 @@ import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import FarmTabButtons from './components/FarmTabButtons'
 import Divider from './components/Divider'
 
-
-
 const NftFarm: React.FC = () => {
   const { path } = useRouteMatch()
   const TranslateString = useI18n()
@@ -26,7 +24,6 @@ const NftFarm: React.FC = () => {
   const cakePrice = usePriceCakeBusd()
   const bnbPrice = usePriceBnbBusd()
   const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
-
 
   const dispatch = useDispatch()
   const { fastRefresh } = useRefresh()
@@ -38,8 +35,8 @@ const NftFarm: React.FC = () => {
 
   const [stakedOnly, setStakedOnly] = useState(false)
 
-  const activeFarms = farmsLP.filter((farm) =>  farm.multiplier !== '0X' && farm.pid !== 6)
-  const inactiveFarms = farmsLP.filter((farm) =>  farm.multiplier === '0X')
+  const activeFarms = farmsLP.filter((farm) => farm.multiplier !== '0X' && farm.pid !== 6)
+  const inactiveFarms = farmsLP.filter((farm) => farm.multiplier === '0X')
 
   const stakedOnlyFarms = activeFarms.filter(
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
@@ -55,19 +52,21 @@ const NftFarm: React.FC = () => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
         // }
-        const cakeRewardPerBlock = new BigNumber(farm.crownsPerBlock || 1).times(new BigNumber(farm.poolWeight)) .div(new BigNumber(10).pow(18))
+        const cakeRewardPerBlock = new BigNumber(farm.crownsPerBlock || 1)
+          .times(new BigNumber(farm.poolWeight))
+          .div(new BigNumber(10).pow(18))
         const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
 
-        let apy = cakePrice.times(cakeRewardPerYear);
+        let apy = cakePrice.times(cakeRewardPerYear)
 
-        let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0);
+        let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0)
 
         if (farm.quoteTokenSymbol === QuoteToken.BNB) {
-          totalValue = totalValue.times(bnbPrice);
+          totalValue = totalValue.times(bnbPrice)
         }
 
-        if(totalValue.comparedTo(0) > 0){
-          apy = apy.div(totalValue);
+        if (totalValue.comparedTo(0) > 0) {
+          apy = apy.div(totalValue)
         }
 
         return { ...farm, apy }
@@ -90,18 +89,15 @@ const NftFarm: React.FC = () => {
   return (
     <Page>
       <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
-        
-          Hold MutantKings NFTs to earn KINGS
-
-        
+        Hold MutantKings NFTs to earn KINGS
       </Heading>
-      <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly}/>
+      <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
         <Divider />
         <FlexLayout>
           <Route exact path={`${path}`}>
             <FarmCard
-              key='mutantkingnft'
+              key="mutantkingnft"
               farm={activeFarms[0]}
               removed={false}
               bnbPrice={bnbPrice}

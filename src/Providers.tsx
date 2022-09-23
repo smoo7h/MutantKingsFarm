@@ -12,7 +12,7 @@ import store from 'state'
 
 const Providers: React.FC = ({ children }) => {
   const rpcUrl = getRpcUrl()
-  const chainId = parseInt(process.env.REACT_APP_CHAIN_ID);
+  const chainId = parseInt(process.env.REACT_APP_CHAIN_ID)
   return (
     <Provider store={store}>
       <ThemeContextProvider>
@@ -20,7 +20,7 @@ const Providers: React.FC = ({ children }) => {
           <bsc.UseWalletProvider
             chainId={chainId}
             connectors={{
-              walletconnect: { rpcUrl }
+              walletconnect: { rpcUrl },
             }}
           >
             <BlockContextProvider>

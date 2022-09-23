@@ -47,8 +47,6 @@ export const useNftBalance = (tokenAddress: string) => {
   return balance
 }
 
-
-
 export const useTotalSupply = () => {
   const { slowRefresh } = useRefresh()
   const [totalSupply, setTotalSupply] = useState<BigNumber>()
@@ -65,8 +63,6 @@ export const useTotalSupply = () => {
 
   return totalSupply
 }
-
-
 
 export const useBurnedBalance = (tokenAddress: string) => {
   const [balance, setBalance] = useState(new BigNumber(0))

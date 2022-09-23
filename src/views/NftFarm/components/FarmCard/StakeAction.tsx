@@ -6,7 +6,7 @@ import useI18n from 'hooks/useI18n'
 import useStake from 'hooks/useStake'
 import useUnstake from 'hooks/useUnstake'
 import { getBalanceNumber } from 'utils/formatBalance'
-import useTokenBalance, {useNftBalance} from 'hooks/useTokenBalance'
+import useTokenBalance, { useNftBalance } from 'hooks/useTokenBalance'
 
 import { getKingsAddress, getNftAddress } from 'utils/addressHelpers'
 import DepositModal from '../DepositModal'
@@ -27,26 +27,24 @@ const IconButtonWrapper = styled.div`
   }
 `
 
-const StakeAction: React.FC<FarmCardActionsProps> = ({ stakedBalance, tokenBalance, tokenName, pid, depositFeeBP}) => {
+const StakeAction: React.FC<FarmCardActionsProps> = ({ stakedBalance, tokenBalance, tokenName, pid, depositFeeBP }) => {
   const TranslateString = useI18n()
   const { onStake } = useStake(pid)
   const { onUnstake } = useUnstake(pid)
-  
 
   const nftBalance = getBalanceNumber(useNftBalance(getNftAddress()))
   const rawStakedBalance = getBalanceNumber(stakedBalance)
 
-
-  const [onPresentDeposit] = useModal(<DepositModal max={tokenBalance} onConfirm={onStake} tokenName={tokenName} depositFeeBP={depositFeeBP} />)
+  const [onPresentDeposit] = useModal(
+    <DepositModal max={tokenBalance} onConfirm={onStake} tokenName={tokenName} depositFeeBP={depositFeeBP} />,
+  )
   const [onPresentWithdraw] = useModal(
     <WithdrawModal max={stakedBalance} onConfirm={onUnstake} tokenName={tokenName} />,
   )
 
-
-
   return (
     <Flex justifyContent="space-between" alignItems="center">
-      <Heading color={rawStakedBalance === 0 ? 'text' : 'text'}>{ (nftBalance * 1000000000000000000) }</Heading>
+      <Heading color={rawStakedBalance === 0 ? 'text' : 'text'}>{nftBalance * 1000000000000000000}</Heading>
     </Flex>
   )
 }

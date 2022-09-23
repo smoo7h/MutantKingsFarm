@@ -14,7 +14,7 @@ interface Call {
 
 const multicall = async (abi: any[], calls: Call[]) => {
   const web3 = getWeb3()
-  const multi = new web3.eth.Contract((MultiCallAbi as unknown) as AbiItem, getMulticallAddress())
+  const multi = new web3.eth.Contract(MultiCallAbi as unknown as AbiItem, getMulticallAddress())
 
   const itf = new Interface(abi)
 
