@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react'
 import useI18n from 'hooks/useI18n'
 import styled from 'styled-components'
