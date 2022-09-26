@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template */
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { Heading, Card, CardBody, Button } from '@pancakeswap-libs/uikit'
@@ -84,8 +85,8 @@ const FarmedStakingCard = () => {
           {TranslateString(542, 'Farms & Staking')}
         </Heading>
         <Row>
-          <CardImage src="/images/egg/2.png" alt="cake logo" width={64} height={64} />
-          <CardImage src="/images/farms/kings.png" alt="cake logo" width={64} height={64} />
+          <CardImage src={process.env.PUBLIC_URL + "/images/egg/2.png"} alt="cake logo" width={64} height={64} />
+          <CardImage src={process.env.PUBLIC_URL + "/images/farms/kings.png"} alt="cake logo" width={64} height={64} />
         </Row>
         <Row>
           <Block>

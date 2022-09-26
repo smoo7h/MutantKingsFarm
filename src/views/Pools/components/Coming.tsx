@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template */
 import React from 'react'
 import styled from 'styled-components'
 import { Image, Button } from '@pancakeswap-libs/uikit'
@@ -43,7 +44,7 @@ const Coming: React.FC = () => {
             👀
           </span>
         </CardTitle>
-        <Image src="/images/bunny-question.svg" width={64} height={64} alt="Your project here" />
+        <Image src={process.env.PUBLIC_URL + "/images/bunny-question.svg"} width={64} height={64} alt="Your project here" />
         <Balance>???</Balance>
         <Label>{TranslateString(416, 'Create a pool for your token')}</Label>
         <Button

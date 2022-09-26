@@ -37,7 +37,7 @@ const App: React.FC = () => {
   useFetchPublicData()
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <ResetCSS />
       <GlobalStyle />
       <Menu>

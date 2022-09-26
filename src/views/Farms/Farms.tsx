@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template */
 import React, { useEffect, useCallback, useState } from 'react'
 import { Route, useRouteMatch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -112,7 +113,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
         </FlexLayout>
       </div>
-      <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive />
+      <Image src={process.env.PUBLIC_URL +"/images/egg/8.png"} alt="illustration" width={1352} height={587} responsive />
     </Page>
   )
 }

@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template */
 import React from 'react'
 import styled from 'styled-components'
 import { Tag, Flex, Heading, Image } from '@pancakeswap-libs/uikit'
@@ -32,7 +33,7 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
 }) => {
   return (
     <Wrapper justifyContent="space-between" alignItems="center" mb="12px">
-      <Image src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} width={64} height={64} />
+      <Image src={process.env.PUBLIC_URL + `/images/farms/${farmImage}.png`} alt={tokenSymbol} width={64} height={64} />
       <Flex flexDirection="column" alignItems="flex-end">
         <Heading mb="4px">{lpLabel}</Heading>
         <Flex justifyContent="center">
