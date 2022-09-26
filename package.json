@@ -1,6 +1,7 @@
 {
-  "name": "goose-frontend",
+  "name": "mutantkingsfarm",
   "version": "0.1.0",
+  "homepage": "https://smoo7h.github.io/MutantKingsFarm",
   "private": true,
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
@@ -63,6 +64,7 @@
     "@pancakeswap-libs/eslint-config-pancake": "1.0.0",
     "@types/jest": "^26.0.19",
     "eslint": "^7.16.0",
+    "gh-pages": "^4.0.0",
     "husky": "^4.3.0",
     "prettier": "^2.1.2",
     "source-map-explorer": "^2.5.1"
