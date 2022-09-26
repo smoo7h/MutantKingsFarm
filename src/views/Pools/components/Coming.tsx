@@ -44,7 +44,12 @@ const Coming: React.FC = () => {
             👀
           </span>
         </CardTitle>
-        <Image src={process.env.PUBLIC_URL + "/images/bunny-question.svg"} width={64} height={64} alt="Your project here" />
+        <Image
+          src={process.env.PUBLIC_URL + '/images/bunny-question.svg'}
+          width={64}
+          height={64}
+          alt="Your project here"
+        />
         <Balance>???</Balance>
         <Label>{TranslateString(416, 'Create a pool for your token')}</Label>
         <Button

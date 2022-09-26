@@ -74,7 +74,7 @@ const ComingSoon = () => {
               <strong>{TranslateString(510, 'You get the tokens.')}</strong>
             </Text>
           </Block>
-          <MobileImage src={process.env.PUBLIC_URL + "/images/ifo-bunny.svg"} alt="ifo bunny" />
+          <MobileImage src={process.env.PUBLIC_URL + '/images/ifo-bunny.svg'} alt="ifo bunny" />
           <Block>
             <Title as="h2">{TranslateString(512, 'Want to launch your own IFO?')}</Title>
             <Text mb={3}>
@@ -94,7 +94,7 @@ const ComingSoon = () => {
           </Block>
         </div>
         <div>
-          <MainImage src={process.env.PUBLIC_URL + "/images/ifo-bunny.svg"} alt="ifo bunny" />
+          <MainImage src={process.env.PUBLIC_URL + '/images/ifo-bunny.svg'} alt="ifo bunny" />
         </div>
       </Content>
     </Page>

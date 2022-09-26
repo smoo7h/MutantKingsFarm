@@ -85,8 +85,8 @@ const FarmedStakingCard = () => {
           {TranslateString(542, 'Farms & Staking')}
         </Heading>
         <Row>
-          <CardImage src={process.env.PUBLIC_URL + "/images/egg/2.png"} alt="cake logo" width={64} height={64} />
-          <CardImage src={process.env.PUBLIC_URL + "/images/farms/kings.png"} alt="cake logo" width={64} height={64} />
+          <CardImage src={process.env.PUBLIC_URL + '/images/egg/2.png'} alt="cake logo" width={64} height={64} />
+          <CardImage src={process.env.PUBLIC_URL + '/images/farms/kings.png'} alt="cake logo" width={64} height={64} />
         </Row>
         <Row>
           <Block>

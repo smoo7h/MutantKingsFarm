@@ -112,7 +112,13 @@ const NftFarm: React.FC = () => {
           </Route>
         </FlexLayout>
       </div>
-      <Image src={process.env.PUBLIC_URL + "/images/egg/8.png"} alt="illustration" width={1352} height={587} responsive />
+      <Image
+        src={process.env.PUBLIC_URL + '/images/egg/8.png'}
+        alt="illustration"
+        width={1352}
+        height={587}
+        responsive
+      />
     </Page>
   )
 }
